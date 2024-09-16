@@ -1,0 +1,128 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Orbitron', sans-serif;
+    background: #000;
+    color: #0ff;
+    overflow-x: hidden;
+}
+
+#root {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 0 20px #0ff;
+    animation: subtle-float 10s ease-in-out infinite;
+}
+
+@keyframes subtle-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    text-shadow: 0 0 10px #0ff;
+    animation: subtle-glow 4s ease-in-out infinite alternate;
+}
+
+@keyframes subtle-glow {
+    from { text-shadow: 0 0 5px #0ff, 0 0 10px #0ff; }
+    to { text-shadow: 0 0 10px #0ff, 0 0 20px #0ff; }
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+input[type="text"] {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: 2px solid #0ff;
+    background: transparent;
+    color: #0ff;
+    border-radius: 25px 0 0 25px;
+    outline: none;
+}
+
+.search-btn {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background: #0ff;
+    color: #000;
+    border: none;
+    border-radius: 0 25px 25px 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.search-btn:hover {
+    background: #00ffff;
+    box-shadow: 0 0 10px #0ff;
+}
+
+.repo-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.repo-item {
+    background: rgba(0, 255, 255, 0.1);
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.repo-item:hover {
+    background: rgba(0, 255, 255, 0.2);
+    transform: scale(1.02);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+}
+
+.repo-name {
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.repo-item:hover .repo-name {
+    color: #ff00ff;
+}
+
+.repo-url {
+    color: #0ff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.repo-item:hover .repo-url {
+    color: #00ff00;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    input[type="text"], .search-btn {
+        font-size: 0.9rem;
+    }
+}
